@@ -5,7 +5,6 @@
 //  Created by Thanakrit Weekhamchai on 3/21/13.
 //  Copyright (c) 2013 Clbs Ltd. All rights reserved.
 //
-
 #import "TWStatus.h"
 
 @interface TWStatus (){
@@ -15,6 +14,8 @@
     
     UIActivityIndicatorView *_activityIndicator;
 }
+
+- (void)setBackgroundColor:(UIColor *)color;
 
 @end
 
@@ -56,6 +57,11 @@
     [_statusWindow addSubview:_backgroundView];
 }
 
+- (void)setBackgroundColor:(UIColor *)color
+{
+    [_backgroundView setBackgroundColor:color];
+}
+
 + (id)sharedTWStatus{
     
     static TWStatus *_sharedTWStatus = nil;
@@ -69,6 +75,12 @@
 
 + (void)showLoadingWithStatus:(NSString *)status{
     [[TWStatus sharedTWStatus] showLoadingWithStatus:status];
+}
+
++ (void)showStatus:(NSString *)status withColor:(UIColor *)color{
+    TWStatus *statusView = [TWStatus sharedTWStatus];
+    [statusView setBackgroundColor:color];
+    [statusView showStatus:status];
 }
 
 + (void)showStatus:(NSString *)status{
