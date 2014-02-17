@@ -60,6 +60,7 @@
 - (void)setBackgroundColor:(UIColor *)color
 {
     [_backgroundView setBackgroundColor:color];
+    [_statusWindow setBackgroundColor:color];
 }
 
 + (id)sharedTWStatus{
