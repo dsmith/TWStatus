@@ -63,6 +63,11 @@
     [_statusWindow setBackgroundColor:color];
 }
 
+- (void)setTextColor:(UIColor *)color
+{
+    [_statusLabel setTextColor:color];
+}
+
 + (id)sharedTWStatus{
 
     static TWStatus *_sharedTWStatus = nil;
@@ -78,9 +83,12 @@
     [[TWStatus sharedTWStatus] showLoadingWithStatus:status];
 }
 
-+ (void)showStatus:(NSString *)status withColor:(UIColor *)color{
++ (void)showStatus:(NSString *)status withBackgroundColor:(UIColor *)backgroundColor andTextColor:(UIColor *)textColor
+{
+
     TWStatus *statusView = [TWStatus sharedTWStatus];
     [statusView setBackgroundColor:color];
+    [statusView setTextColor:textColor];
     [statusView showStatus:status];
 }
 

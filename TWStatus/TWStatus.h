@@ -14,7 +14,9 @@
 
 + (void)showLoadingWithStatus:(NSString *)status;
 + (void)showStatus:(NSString *)status;
-+ (void)showStatus:(NSString *)status withColor:(UIColor *)color;
++ (void)showStatus:(NSString *)status
+    withBackgroundColor:(UIColor *)backgroundColor
+      andTextColor:(UIColor *)textColor;
 + (void)dismiss;
 + (void)dismissAfter:(NSTimeInterval)interval;
 
