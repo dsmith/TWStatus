@@ -87,7 +87,7 @@
 {
 
     TWStatus *statusView = [TWStatus sharedTWStatus];
-    [statusView setBackgroundColor:color];
+    [statusView setBackgroundColor:backgroundColor];
     [statusView setTextColor:textColor];
     [statusView showStatus:status];
 }
